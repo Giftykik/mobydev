@@ -1,5 +1,5 @@
 <?php
-$I=[
+$I = [
     "Vegetables"=> [
         "0"=> "Asparagus",
         "1"=> "Celery",
@@ -22,17 +22,17 @@ $I=[
     ]
 ];
 
-echo '<pre>';
 $pre = '';
-tree($I,$pre);
+tree($I, $pre);
 
-function tree( $I, $pre ) {
-$pre=$pre.'-';
-foreach ($I as $k => $v) {
-if( is_array($v)){echo "<br>{$pre}{$k}";tree($v,$pre);}else echo"<br>{$pre}{$v}";
+function tree($I, $pre) {
+    $pre = $pre.'-';
+    foreach ($I as $k => $v) {
+        if (is_array($v)) {
+            echo "<br>{$pre}{$k}";
+            tree($v, $pre);
+        } else echo"<br>{$pre}{$v}";
+    }
 }
-}
-
-
 
 ?>
